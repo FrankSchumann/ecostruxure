@@ -18,7 +18,7 @@ class EcoStruxureFactory : public COPA::FactoryIf
     virtual std::string getType() const override;
 
    private:
-    const std::string type = std::string( "CodesysAdapter" );
+    const std::string type = std::string( "EcoStruxureAdapter" );
 
     std::shared_ptr< COPA::ComponentControllerIf > componentController;
 };
