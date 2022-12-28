@@ -5,6 +5,7 @@
 
 #include "../component/EcoStruxureAdapter.h"
 #include "copa-pdk/component/ComponentController.h"
+#include "runtime-sdk/RuntimeControllerIf.h"
 
 EcoStruxureFactory::EcoStruxureFactory() : EcoStruxureFactory( std::make_shared< COPA::ComponentController >() )
 {
@@ -24,10 +25,10 @@ std::shared_ptr< COPA::ComponentIf > EcoStruxureFactory::create( std::string con
 
     std::shared_ptr< RuntimeIf > ecoStruxureAdapter = std::make_shared< EcoStruxureAdapter >( type, name );
 
-    auto const runtimeAdapterTmp = componentController->get( "RuntimeAdapter", "Mickey Mouse" );
-    auto const runtimeAdapter = std::reinterpret_pointer_cast< RuntimeAdapterIf >( runtimeAdapterTmp );
+    auto const runtimeControllerTmp = componentController->get( "RuntimeController", "Mickey Mouse" );
+    auto const runtimeController = std::reinterpret_pointer_cast< RuntimeControllerIf >( runtimeControllerTmp );
 
-    runtimeAdapter->subscribe( name, ecoStruxureAdapter );
+    runtimeController->subscribe( name, ecoStruxureAdapter );
 
     return ecoStruxureAdapter;
 }

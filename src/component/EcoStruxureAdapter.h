@@ -3,7 +3,6 @@
 #include <memory>
 
 #include "copa-pdk/osal/semaphore/SemaphoreFactory.h"
-#include "runtime-sdk/RuntimeAdapterIf.h"
 #include "runtime-sdk/RuntimeIf.h"
 
 class EcoStruxureAdapter : public RuntimeIf
