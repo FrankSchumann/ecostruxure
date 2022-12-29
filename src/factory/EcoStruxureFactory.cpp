@@ -15,10 +15,6 @@ EcoStruxureFactory::EcoStruxureFactory( std::shared_ptr< COPA::ComponentControll
 {
 }
 
-EcoStruxureFactory::~EcoStruxureFactory()
-{
-}
-
 std::shared_ptr< COPA::ComponentIf > EcoStruxureFactory::create( std::string const &name ) const
 {
     std::cout << "EcoStruxureFactory::create" << std::endl;

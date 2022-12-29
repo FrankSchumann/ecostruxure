@@ -10,7 +10,6 @@ class EcoStruxureAdapter : public RuntimeIf
    public:
     EcoStruxureAdapter( std::string const &_type, std::string const &_name );
     EcoStruxureAdapter( std::string const &_type, std::string const &_name, std::shared_ptr< COPA::SemaphoreFactoryIf > semaphoreFactory );
-    ~EcoStruxureAdapter();
 
     virtual void startApplications() const override;
     virtual void stopApplications() const override;
