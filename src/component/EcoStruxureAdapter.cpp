@@ -12,10 +12,6 @@ EcoStruxureAdapter::EcoStruxureAdapter( std::string const &_type, std::string co
     semaphore = semaphoreFactory->create();
 }
 
-EcoStruxureAdapter::~EcoStruxureAdapter()
-{
-}
-
 void EcoStruxureAdapter::startApplications() const
 {
     std::cout << "EcoStruxureAdapter::startApplications"
