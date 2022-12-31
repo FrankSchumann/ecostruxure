@@ -3,6 +3,7 @@
 
 #include "config.h"
 #include "copa-pdk/factory/FactoryController.h"
+#include "copa-pdk/component/ComponentController.h"
 #include "factory/EcoStruxureFactory.h"
 
 extern "C" void subscribePlugin()
@@ -21,6 +22,17 @@ extern "C" void subscribePlugin()
 extern "C" void unsubscribePlugin()
 {
     std::cout << "ecostruxure - unsubscribePlugin" << std::endl;
+
+    std::shared_ptr< COPA::ComponentController > componentController = std::make_shared< COPA::ComponentController >();
+
+    std::shared_ptr< COPA::FactoryController > factoryController = std::make_shared< COPA::FactoryController >();
+
+    std::shared_ptr< COPA::FactoryIf > ecoStruxureFactory = std::make_shared< EcoStruxureFactory >();
+
+    auto const type = ecoStruxureFactory->getType();
+    componentController->erase(type);
+
+    factoryController->unsubscribe( type );
 
     std::cout << std::endl;
 }
