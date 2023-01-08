@@ -19,12 +19,12 @@ include_directories( "../include" )
 
 file( GLOB SOURCES "src/*/*.cpp" "dummy/*/*.cpp" "../src/*/*.cpp" )
 
-add_executable(hello_test  ${SOURCES})
+add_executable(${CMAKE_PROJECT_NAME}  ${SOURCES})
 
 target_link_libraries(
-  hello_test
+  ${CMAKE_PROJECT_NAME}
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(${CMAKE_PROJECT_NAME})
