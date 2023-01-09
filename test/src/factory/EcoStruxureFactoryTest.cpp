@@ -1,5 +1,7 @@
 #include <gtest/gtest.h>
 
+#include "factory/EcoStruxureFactory.h"
+
 // Demonstrate some basic assertions.
 TEST(EcoStruxureFactoryTest, BasicAssertions) {
   // Expect two strings not to be equal.
@@ -11,4 +13,13 @@ TEST(EcoStruxureFactoryTest, BasicAssertions) {
 TEST(EcoStruxureFactoryTest, Frank1)
 {
 	GTEST_SUCCEED();
+}
+
+TEST(EcoStruxureFactoryTest, getType)
+{
+	EcoStruxureFactory ecoStruxureFactory;
+
+	std::string const type = ecoStruxureFactory.getType();
+
+	ASSERT_EQ( "EcoStruxureAdapter", type );
 }
