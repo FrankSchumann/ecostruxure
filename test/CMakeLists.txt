@@ -15,7 +15,7 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-include_directories( "../include" )
+include_directories( "../include" "../src" )
 
 file( GLOB SOURCES "src/*/*.cpp" "dummy/*/*.cpp" "../src/*/*.cpp" )
 
