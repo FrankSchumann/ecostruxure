@@ -23,6 +23,7 @@ add_executable(${CMAKE_PROJECT_NAME}  ${SOURCES})
 
 target_link_libraries(
   ${CMAKE_PROJECT_NAME}
+  GTest::gmock_main
   GTest::gtest_main
 )
 

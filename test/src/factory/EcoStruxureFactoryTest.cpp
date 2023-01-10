@@ -1,25 +1,38 @@
 #include <gtest/gtest.h>
 
+#include "copa-pdk/mock/component/ComponentController.h"
 #include "factory/EcoStruxureFactory.h"
+#include "runtime-sdk/mock/RuntimeController.h"
 
-// Demonstrate some basic assertions.
-TEST(EcoStruxureFactoryTest, BasicAssertions) {
-  // Expect two strings not to be equal.
-  EXPECT_STRNE("hello", "world");
-  // Expect equality.
-  EXPECT_EQ(7 * 6, 42);
+TEST( EcoStruxureFactoryTest, Failed )
+{
+	GTEST_FAIL();
 }
 
-TEST(EcoStruxureFactoryTest, Frank1)
+TEST( EcoStruxureFactoryTest, create )
 {
-	GTEST_SUCCEED();
+    auto componentController = std::make_shared< Mock::ComponentController >();
+    auto runtimeController = std::make_shared< Mock::RuntimeController >();
+
+    EXPECT_CALL( *componentController, get( testing::_, testing::_ ) ).WillOnce( testing::Return( runtimeController ) );
+    EXPECT_CALL( *runtimeController, subscribe( testing::_, testing::_ ) ).Times( testing::Exactly( 1 ) );
+
+    EcoStruxureFactory ecoStruxureFactory = EcoStruxureFactory( componentController );
+
+    std::string const name = std::string( "Daisy Duck" );
+    auto ecoStruxure = ecoStruxureFactory.create( name );
+
+    ASSERT_NE( nullptr, ecoStruxure );
+
+    ASSERT_EQ( name, ecoStruxure->getName() );
+    ASSERT_EQ( std::string( "EcoStruxureAdapter" ), ecoStruxure->getType() );
 }
 
-TEST(EcoStruxureFactoryTest, getType)
+TEST( EcoStruxureFactoryTest, getType )
 {
-	EcoStruxureFactory ecoStruxureFactory;
+    EcoStruxureFactory ecoStruxureFactory;
 
-	std::string const type = ecoStruxureFactory.getType();
+    std::string const type = ecoStruxureFactory.getType();
 
-	ASSERT_EQ( "EcoStruxureAdapter", type );
+    EXPECT_EQ( "EcoStruxureAdapter", type );
 }
