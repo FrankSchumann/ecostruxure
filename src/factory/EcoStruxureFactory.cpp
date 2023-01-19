@@ -33,3 +33,11 @@ std::string EcoStruxureFactory::getType() const
 {
     return type;
 }
+
+std::vector< std::string > EcoStruxureFactory::getDependencies() const
+{
+    std::vector< std::string > result{ "RuntimeController" };
+
+    return result;
+}
+
