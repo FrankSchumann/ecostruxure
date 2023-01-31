@@ -3,7 +3,7 @@
 #include <memory>
 
 #include "osal/semaphore/SemaphoreFactory.h"
-#include "runtime-sdk/RuntimeIf.h"
+#include "runtime/RuntimeIf.h"
 
 class EcoStruxureAdapter : public RuntimeIf
 {

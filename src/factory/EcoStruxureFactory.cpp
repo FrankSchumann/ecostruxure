@@ -5,7 +5,7 @@
 
 #include "../component/EcoStruxureAdapter.h"
 #include "copa-pdk/component/ComponentController.h"
-#include "runtime-sdk/RuntimeControllerIf.h"
+#include "runtime/RuntimeControllerIf.h"
 
 EcoStruxureFactory::EcoStruxureFactory() : EcoStruxureFactory( std::make_shared< COPA::ComponentController >() )
 {
