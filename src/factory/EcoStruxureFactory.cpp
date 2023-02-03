@@ -4,8 +4,8 @@
 #include <memory>
 
 #include "../component/EcoStruxureAdapter.h"
-#include "copa-pdk/component/ComponentController.h"
-#include "runtime/RuntimeControllerIf.h"
+#include <copa/component/ComponentController.h>
+#include <runtime/RuntimeControllerIf.h>
 
 EcoStruxureFactory::EcoStruxureFactory() : EcoStruxureFactory( std::make_shared< COPA::ComponentController >() )
 {

@@ -3,9 +3,9 @@
 #include <memory>
 #include <string>
 
-#include "copa-pdk/component/ComponentControllerIf.h"
-#include "copa-pdk/component/ComponentIf.h"
-#include "copa-pdk/factory/FactoryIf.h"
+#include <copa/component/ComponentControllerIf.h>
+#include <copa/component/ComponentIf.h>
+#include <copa/factory/FactoryIf.h>
 
 class EcoStruxureFactory : public COPA::FactoryIf
 {
