@@ -1,8 +1,8 @@
-#include "copa-pdk/osal/semaphore/SemaphoreFactory.h"
+#include <osal/semaphore/SemaphoreFactory.h>
 
 #include "Semaphore.h"
 
-namespace COPA
+namespace osal
 {
 SemaphoreFactory::SemaphoreFactory()
 {

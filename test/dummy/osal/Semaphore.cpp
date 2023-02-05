@@ -1,6 +1,6 @@
 #include "Semaphore.h"
 
-namespace COPA
+namespace osal
 {
 Semaphore::Semaphore()
 {

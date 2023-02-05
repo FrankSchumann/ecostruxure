@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 
-#include "copa-pdk/mock/component/ComponentController.h"
 #include "factory/EcoStruxureFactory.h"
-#include "runtime-sdk/mock/RuntimeController.h"
+#include <copa/mock/component/ComponentController.h>
+#include <runtime/mock/component/RuntimeController.h>
 
 TEST( EcoStruxureFactoryTest, Failed )
 {
@@ -11,8 +11,8 @@ TEST( EcoStruxureFactoryTest, Failed )
 
 TEST( EcoStruxureFactoryTest, create )
 {
-    auto componentController = std::make_shared< Mock::ComponentController >();
-    auto runtimeController = std::make_shared< Mock::RuntimeController >();
+    auto componentController = std::make_shared< mock::core::ComponentController >();
+    auto runtimeController = std::make_shared< mock::RuntimeController >();
 
     EXPECT_CALL( *componentController, get( testing::_, testing::_ ) ).WillOnce( testing::Return( runtimeController ) );
     EXPECT_CALL( *runtimeController, subscribe( testing::_, testing::_ ) ).Times( testing::Exactly( 1 ) );
