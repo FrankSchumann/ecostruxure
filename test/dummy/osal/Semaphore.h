@@ -1,8 +1,8 @@
 #pragma once
 
-#include "copa-pdk/osal/semaphore/SemaphoreIf.h"
+#include <osal/semaphore/SemaphoreIf.h>
 
-namespace COPA
+namespace osal
 {
 class Semaphore : public SemaphoreIf
 {

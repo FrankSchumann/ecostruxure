@@ -1,0 +1,9 @@
+[requires]
+copa/[~0.0.0]
+osal/0.0.2
+runtime/0.0.4
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
