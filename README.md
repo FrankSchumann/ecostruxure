@@ -43,17 +43,17 @@ ecostruxure $ cmake --build . -- -j4
 Build and execute GoogleTest.
 
 ```bash
-ecostruxure/build/test $ conan install . --output-folder=build
+ecostruxure/test $ conan install . --output-folder=build
 ```
 ```bash
-ecostruxure/build/test $ cd build
-ecostruxure/build/test $ cmake .. --preset=release
+ecostruxure/test $ cd build
+ecostruxure/test/build $ cmake .. --preset=release
 ```
 ```bash
-ecostruxure/build/test $ cmake --build . -- -j4
+ecostruxure/test/build $ cmake --build . -- -j4
 ```
 ```bash
-ecostruxure/build/test $ ./ecostruxureTest
+ecostruxure/test/build $ ./ecostruxureTest
 ```
 
 # Import Projects
