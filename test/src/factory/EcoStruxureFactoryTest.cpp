@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "factory/EcoStruxureFactory.h"
-#include <copa/mock/component/ComponentController.h>
+#include <core/mock/component/ComponentController.h>
 #include <runtime/mock/component/RuntimeController.h>
 
 TEST( EcoStruxureFactoryTest, Failed )
