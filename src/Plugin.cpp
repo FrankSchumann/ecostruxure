@@ -2,17 +2,17 @@
 #include <memory>
 
 #include "config.h"
-#include <copa/factory/FactoryController.h>
-#include <copa/component/ComponentController.h>
+#include <core/factory/FactoryController.h>
+#include <core/component/ComponentController.h>
 #include "factory/EcoStruxureFactory.h"
 
 extern "C" void subscribePlugin()
 {
     std::cout << "ecostruxure - subscribePlugin" << std::endl;
 
-    std::shared_ptr< COPA::FactoryController > factoryController = std::make_shared< COPA::FactoryController >();
+    std::shared_ptr< core::FactoryController > factoryController = std::make_shared< core::FactoryController >();
 
-    std::shared_ptr< COPA::FactoryIf > ecoStruxureFactory = std::make_shared< EcoStruxureFactory >();
+    std::shared_ptr< core::FactoryIf > ecoStruxureFactory = std::make_shared< EcoStruxureFactory >();
 
     factoryController->subscribe( ecoStruxureFactory );
 
@@ -23,11 +23,11 @@ extern "C" void unsubscribePlugin()
 {
     std::cout << "ecostruxure - unsubscribePlugin" << std::endl;
 
-    std::shared_ptr< COPA::ComponentController > componentController = std::make_shared< COPA::ComponentController >();
+    std::shared_ptr< core::ComponentController > componentController = std::make_shared< core::ComponentController >();
 
-    std::shared_ptr< COPA::FactoryController > factoryController = std::make_shared< COPA::FactoryController >();
+    std::shared_ptr< core::FactoryController > factoryController = std::make_shared< core::FactoryController >();
 
-    std::shared_ptr< COPA::FactoryIf > ecoStruxureFactory = std::make_shared< EcoStruxureFactory >();
+    std::shared_ptr< core::FactoryIf > ecoStruxureFactory = std::make_shared< EcoStruxureFactory >();
 
     auto const type = ecoStruxureFactory->getType();
     componentController->erase(type);

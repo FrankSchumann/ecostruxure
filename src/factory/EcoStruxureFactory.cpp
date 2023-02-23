@@ -4,18 +4,18 @@
 #include <memory>
 
 #include "../component/EcoStruxureAdapter.h"
-#include <copa/component/ComponentController.h>
+#include <core/component/ComponentController.h>
 #include <runtime/RuntimeControllerIf.h>
 
-EcoStruxureFactory::EcoStruxureFactory() : EcoStruxureFactory( std::make_shared< COPA::ComponentController >() )
+EcoStruxureFactory::EcoStruxureFactory() : EcoStruxureFactory( std::make_shared< core::ComponentController >() )
 {
 }
 
-EcoStruxureFactory::EcoStruxureFactory( std::shared_ptr< COPA::ComponentControllerIf > _componentController ) : componentController( _componentController )
+EcoStruxureFactory::EcoStruxureFactory( std::shared_ptr< core::ComponentControllerIf > _componentController ) : componentController( _componentController )
 {
 }
 
-std::shared_ptr< COPA::ComponentIf > EcoStruxureFactory::create( std::string const &name ) const
+std::shared_ptr< core::ComponentIf > EcoStruxureFactory::create( std::string const &name ) const
 {
     std::cout << "EcoStruxureFactory::create" << std::endl;
 
