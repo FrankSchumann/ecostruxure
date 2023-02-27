@@ -34,7 +34,7 @@ extern "C" void unsubscribePlugin()
 
     factoryController->unsubscribe( type );
 
-    std::cout << std::endl;
+    std::cout << "ecostruxure - unsubscribePlugin finished" << std::endl;
 }
 
 extern "C" const char* getName()
