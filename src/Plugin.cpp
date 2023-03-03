@@ -10,7 +10,7 @@ extern "C" void subscribePlugin()
 {
     std::cout << "ecostruxure - subscribePlugin" << std::endl;
 
-    std::shared_ptr< core::FactoryController > factoryController = std::make_shared< core::FactoryController >();
+    auto factoryController = std::make_shared< core::FactoryController >();
 
     std::shared_ptr< core::FactoryIf > ecoStruxureFactory = std::make_shared< EcoStruxureFactory >();
 
@@ -23,11 +23,11 @@ extern "C" void unsubscribePlugin()
 {
     std::cout << "ecostruxure - unsubscribePlugin" << std::endl;
 
-    std::shared_ptr< core::ComponentController > componentController = std::make_shared< core::ComponentController >();
+    auto componentController = std::make_shared< core::ComponentController >();
 
-    std::shared_ptr< core::FactoryController > factoryController = std::make_shared< core::FactoryController >();
+    auto factoryController = std::make_shared< core::FactoryController >();
 
-    std::shared_ptr< core::FactoryIf > ecoStruxureFactory = std::make_shared< EcoStruxureFactory >();
+    auto ecoStruxureFactory = std::make_shared< EcoStruxureFactory >();
 
     auto const type = ecoStruxureFactory->getType();
     componentController->erase(type);
