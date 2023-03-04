@@ -1,9 +1,9 @@
 #pragma once
 
-#include <memory>
-
 #include <osal/semaphore/SemaphoreFactory.h>
 #include <runtime/RuntimeIf.h>
+
+#include <memory>
 
 class EcoStruxureAdapter : public RuntimeIf
 {

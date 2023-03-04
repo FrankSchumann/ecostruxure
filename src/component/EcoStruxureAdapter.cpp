@@ -1,15 +1,14 @@
-#include <iostream>
 #include "EcoStruxureAdapter.h"
 
-std::string const EcoStruxureAdapter::type = std::string("EcoStruxureAdapter");
+#include <iostream>
 
-EcoStruxureAdapter::EcoStruxureAdapter( std::string const &_name )
-    : EcoStruxureAdapter( _name, std::make_shared< osal::SemaphoreFactory >() )
+std::string const EcoStruxureAdapter::type = std::string( "EcoStruxureAdapter" );
+
+EcoStruxureAdapter::EcoStruxureAdapter( std::string const &_name ) : EcoStruxureAdapter( _name, std::make_shared< osal::SemaphoreFactory >() )
 {
 }
 
-EcoStruxureAdapter::EcoStruxureAdapter( std::string const &_name, std::shared_ptr< osal::SemaphoreFactoryIf > semaphoreFactory )
-    : name( _name )
+EcoStruxureAdapter::EcoStruxureAdapter( std::string const &_name, std::shared_ptr< osal::SemaphoreFactoryIf > semaphoreFactory ) : name( _name )
 {
     semaphore = semaphoreFactory->create();
 }

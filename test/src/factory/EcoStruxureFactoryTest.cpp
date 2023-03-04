@@ -1,12 +1,12 @@
+#include <core/mock/component/ComponentController.h>
 #include <gtest/gtest.h>
+#include <runtime/mock/component/RuntimeController.h>
 
 #include "factory/EcoStruxureFactory.h"
-#include <core/mock/component/ComponentController.h>
-#include <runtime/mock/component/RuntimeController.h>
 
 TEST( EcoStruxureFactoryTest, Failed )
 {
-	GTEST_FAIL();
+    GTEST_FAIL();
 }
 
 TEST( EcoStruxureFactoryTest, create )

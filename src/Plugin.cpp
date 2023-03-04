@@ -1,9 +1,10 @@
+#include <core/component/ComponentController.h>
+#include <core/factory/FactoryController.h>
+
 #include <iostream>
 #include <memory>
 
 #include "config.h"
-#include <core/factory/FactoryController.h>
-#include <core/component/ComponentController.h>
 #include "factory/EcoStruxureFactory.h"
 
 extern "C" void subscribePlugin()
@@ -31,22 +32,9 @@ extern "C" void unsubscribePlugin()
 
     auto const type = ecoStruxureFactory->getType();
 
-    // std::cout << "ecostruxureComponents" << std::endl;
-    // std::cout << "type " << type << std::endl;
-    // auto ecoStruxureComponents = componentController->get( type );
-    // std::cout << "ecostruxureComponents2" << std::endl;
-
-    // for (auto const& [name, component] : ecoStruxureComponents)
-    // {
-    //     std::cout << name << std::endl;
-    //     ecoStruxureFactory->cleanup( name );
-    // }
-
-    componentController->erase(type);
+    componentController->erase( type );
 
     factoryController->unsubscribe( type );
-
-    std::cout << "ecostruxure - unsubscribePlugin finished" << std::endl;
 }
 
 extern "C" const char* getName()
