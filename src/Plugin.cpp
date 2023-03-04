@@ -30,6 +30,18 @@ extern "C" void unsubscribePlugin()
     auto ecoStruxureFactory = std::make_shared< EcoStruxureFactory >();
 
     auto const type = ecoStruxureFactory->getType();
+
+    std::cout << "ecostruxureComponents" << std::endl;
+    std::cout << "type " << type << std::endl;
+    auto ecoStruxureComponents = componentController->get( type );
+    std::cout << "ecostruxureComponents2" << std::endl;
+
+    for (auto const& [name, component] : ecoStruxureComponents)
+    {
+        std::cout << name << std::endl;
+        ecoStruxureFactory->cleanup( name );
+    }
+
     componentController->erase(type);
 
     factoryController->unsubscribe( type );

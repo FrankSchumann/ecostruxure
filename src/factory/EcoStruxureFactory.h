@@ -17,8 +17,8 @@ class EcoStruxureFactory : public core::FactoryIf
     virtual std::string getType() const override;
     virtual std::vector<std::string> getDependencies() const override;
 
-   private:
-    const std::string type = std::string( "EcoStruxureAdapter" );
+    void cleanup( std::string const &name );
 
+   private:
     std::shared_ptr< core::ComponentControllerIf > componentController;
 };
