@@ -29,7 +29,7 @@ std::shared_ptr< core::ComponentIf > EcoStruxureFactory::create( std::string con
     return ecoStruxureAdapter;
 }
 
-void EcoStruxureFactory::cleanup( std::string const &name )
+void EcoStruxureFactory::cleanup( std::string const &name ) const
 {
     std::cout << "EcoStruxureFactory::cleanup" << std::endl;
 

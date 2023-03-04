@@ -14,10 +14,9 @@ class EcoStruxureFactory : public core::FactoryIf
     EcoStruxureFactory( std::shared_ptr< core::ComponentControllerIf > _componentController );
 
     virtual std::shared_ptr< core::ComponentIf > create( std::string const &name ) const override;
+    virtual void cleanup( std::string const &name ) const override;
     virtual std::string getType() const override;
     virtual std::vector<std::string> getDependencies() const override;
-
-    void cleanup( std::string const &name );
 
    private:
     std::shared_ptr< core::ComponentControllerIf > componentController;

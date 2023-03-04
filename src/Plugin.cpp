@@ -31,16 +31,16 @@ extern "C" void unsubscribePlugin()
 
     auto const type = ecoStruxureFactory->getType();
 
-    std::cout << "ecostruxureComponents" << std::endl;
-    std::cout << "type " << type << std::endl;
-    auto ecoStruxureComponents = componentController->get( type );
-    std::cout << "ecostruxureComponents2" << std::endl;
+    // std::cout << "ecostruxureComponents" << std::endl;
+    // std::cout << "type " << type << std::endl;
+    // auto ecoStruxureComponents = componentController->get( type );
+    // std::cout << "ecostruxureComponents2" << std::endl;
 
-    for (auto const& [name, component] : ecoStruxureComponents)
-    {
-        std::cout << name << std::endl;
-        ecoStruxureFactory->cleanup( name );
-    }
+    // for (auto const& [name, component] : ecoStruxureComponents)
+    // {
+    //     std::cout << name << std::endl;
+    //     ecoStruxureFactory->cleanup( name );
+    // }
 
     componentController->erase(type);
 
